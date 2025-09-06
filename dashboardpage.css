@@ -1,0 +1,128 @@
+/* styles.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    color: #9c61de; /* Light purple */
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #777;
+}
+
+/* Navigation Bar */
+.navigation-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.navigation-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.navigation-bar li {
+    font-size: 1.1em;
+}
+
+.navigation-bar a {
+    text-decoration: none;
+    color: #9c61de; /* Light purple */
+    font-weight: 600;
+}
+
+.navigation-bar a:hover {
+    color: #7b47b1; /* Darker purple on hover */
+    text-decoration: underline;
+}
+
+/* Main Content Section */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    color: #9c61de; /* Light purple */
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Dynamic Section */
+.dynamic-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.dynamic-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.dynamic-item h3 {
+    font-size: 2em;
+    color: #9c61de;
+    margin-bottom: 10px;
+}
+
+.dynamic-item p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 1em;
+}

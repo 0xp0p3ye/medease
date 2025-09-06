@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedEase - Mental Health & Well-being</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #9370DB, #E6E6FA);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #fff;
+        }
+
+        .header p {
+            font-size: 1.5em;
+            color: #E6E6FA;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #E6E6FA;
+        }
+
+        /* Main Content */
+        .main-container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .intro {
+            margin-bottom: 30px;
+        }
+
+        .intro h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+        }
+
+        /* Self-Assessment Section */
+        .self-assessment {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .self-assessment h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .self-assessment p {
+            font-size: 1.2em;
+        }
+
+        .self-assessment a {
+            color: #9370DB;
+            font-weight: bold;
+            font-size: 1.1em;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .feature-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card a {
+            text-decoration: none;
+            color: #9370DB;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .feature-card a:hover {
+            color: #E6E6FA;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #9370DB;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome to MedEase</h1>
+        <p>Your mental health and well-being platform</p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index1.html">Home</a></li>
+            <li><a href="relaxation-tools.html">Relaxation Games</a></li>
+            <li><a href="meditation.html">Meditation Zone</a></li>
+            <li><a href="therapist-profile.html">Therapist Profiles</a></li>
+            <li><a href="chatbot.html">AI Chatbot</a></li>
+            <li><a href="pet.html">Virtual pet</a></li>
+            <!-- Add logout button -->
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-container">
+        <section class="intro">
+            <h2>Welcome, <span id="username"></span>!</h2>
+            <p>Taking care of your mental health is important. Find tools to manage stress, relax, and meditate.</p>
+        </section>
+
+        <!-- Self-Assessment Section -->
+        <section class="self-assessment">
+            <h3>Self-Assessment</h3>
+            <p>This feature helps you assess your current mood and stress levels. By completing a quick questionnaire, you'll receive insights into your emotional state and personalized recommendations for improving mental health. Track your progress over time and make well-informed decisions about your well-being.</p>
+            <a href="self-assessment.html">Start Self-Assessment</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card" id="card1">
+                <img src="https://via.placeholder.com/250x150?text=Relaxation+Games" alt="Relaxation Games">
+                <h3>Relaxation Games</h3>
+                <p>Engage in interactive games designed to help reduce stress, anxiety, and promote relaxation. These games provide a fun yet effective way to distract the mind and reset your mood.</p>
+                <a href="relaxation-tools.html">Learn More</a>
+            </div>
+            <div class="feature-card" id="card2">
+                <img src="https://via.placeholder.com/250x150?text=Meditation+Zone" alt="Meditation Zone">
+                <h3>Meditation Zone</h3>
+                <p>Relax and recharge with guided meditation sessions. These sessions provide calming sounds and mindfulness exercises, helping you find inner peace and reduce stress.</p>
+                <a href="meditation.html">Start Meditation</a>
+            </div>
+            <div class="feature-card" id="card3">
+                <img src="https://via.placeholder.com/250x150?text=Therapist+Profiles" alt="Therapist Profiles">
+                <h3>Therapist Profiles</h3>
+                <p>Find a therapist that suits your needs. View profiles, including specialties, experience, and contact details. Book sessions that match your requirements for professional mental health support.</p>
+                <a href="therapist-profile.html">Find a Therapist</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 MedEase - All Rights Reserved</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        // Retrieve username from localStorage
+        const username = localStorage.getItem('username') || 'Guest';
+        document.getElementById('username').textContent = username;
+
+        // GSAP Animations
+        gsap.from(".navbar", { y: -50, opacity: 0, duration: 1.5 });
+        gsap.from(".feature-card", { scale: 0.8, opacity: 0, duration: 1, stagger: 0.3 });
+
+        // Logout functionality
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            // Clear the username from localStorage
+            localStorage.removeItem('username');
+            
+            // Redirect to the index page
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

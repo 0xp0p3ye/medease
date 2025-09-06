@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medease - Meditation Zone</title>
+    <link rel="stylesheet" href="pet.css">
+    <header class="header">
+        <h1>Virtual Pet</h1>
+        <p>This is a virtual pet which you can feed,take for a walk and much more..</p>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index1.html">Home</a></li>
+            <li><a href="self-assessment.html">Self Assessment</a></li>
+            <li><a href="relaxation-tools.html">Relaxation Tools</a></li>
+            <li><a href="meditation.html">Meditation Zone</a></li>
+            <li><a href="chatbot.html">AI Chatbot</a></li>
+            <li><a href="pet.html">Virtual pet</a></li>
+        </ul>
+    </nav>
+    <style>
+        /* Relaxation Tools Section Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header {
+            background-color: #6a5acd;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .navbar {
+            background-color: #4e4e9b;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .game-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .game-box {
+            width: 300px;
+            height: 200px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .game-box:hover {
+            transform: scale(1.05);
+        }
+
+        .game-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #game-container {
+            margin-top: 20px;
+            display: none;
+        }
+        #game-frame {
+    width: 40vw;  /* 90% of the viewport width */
+    height: 600px; /* Adjust height as needed */
+    border: none;
+    display: block;
+    margin: 20px auto; /* Centering */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for better visibility */
+}
+
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: lightblue;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 20px;
+            transition: transform 1s ease-in-out;
+        }
+
+        #breathing-circle {
+            animation: breathe 4s infinite;
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        #sound-controls button, #timer button {
+            padding: 10px 20px;
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        #sound-controls button:hover, #timer button:hover {
+            background-color: #4e4e9b;
+        }
+
+        #timer input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
+            width: 150px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #timer-display {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4b3f72;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .meditation-session {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .meditation-session button {
+            padding: 15px 30px;
+            background-color: #4b3f72;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .meditation-session button:hover {
+            background-color: #6c5c8f;
+        }
+        #meditation-timer {
+            margin-top: 30px;
+            text-align: center;
+            display: none;
+        }
+        #timer {
+            font-size: 48px;
+            color: #4b3f72;
+        }
+    </style>
+</head>
+<audio id="meditationAudio" hidden>
+    <source id="audioSource" src="" type="audio/mpeg">
+</audio>
+
+<body>
+    
+    <br>
+    <br>
+    <br>
+    <div class="mainPetBox">
+        <div class="petBoxSingular" id="petBoxSingular">
+            <input type="text" class="petName" placeholder="Pet's Name Goes Here"></input>
+            <h4 class="petSubClass"><em>Dog</em></h4>
+            <img id="petIcon" class="petIcon">
+            <div class="petObjects">
+                <label for="objectLvlPlay" class="objectNames" id="objectPlay">Fun</label>
+                    <progress class="objectLevels" id="objectLvlPlay" max="100" value="50"> 50% </progress>
+                    <!-- <h4 class="objectLevels" id="objectLvlPlay">#</h4> -->
+                <label for="objectLvlHunger"" class="objectNames" id="objectHunger">Hunger</label>
+                    <progress class="objectLevels" id="objectLvlHunger" max="100" value="60"> 60% </progress>
+                    <!-- <h4 class="objectLevels" id="objectLvlHunger">#</h4> -->
+                <label for="objectLvlThirst" class="objectNames" id="objectThirst">Thirst</label>
+                    <progress class="objectLevels" id="objectLvlThirst" max="100" value="10"> 10% </progress>
+                    <!-- <h4 class="objectLevels" id="objectLvlThirst">#</h4> -->
+                <label for="objectLvlWalks" class="objectNames" id="objectWalks">Walks</label>
+                    <progress class="objectLevels" id="objectLvlWalks" max="100" value="90"> 90% </progress>
+                    <!-- <h4 class="objectLevels" id="objectLvlWalks">#</h4> -->
+            </div>
+            <button type="submit" class="objectButtons" id="buttonPlayWith">Play With</button>
+            <button type="submit" class="objectButtons" id="buttonFeed">Give Food</button>
+            <button type="submit" class="objectButtons" id="buttonWater">Give Water</button>
+            <button type="submit" class="objectButtons" id="buttonWalk">Go For Walk</button>
+
+            <button type="submit" class="objectButtonsRIP" id="buttonKillPet">RIP</button>
+            <button type="submit" class="objectButtonsRIP" id="buttonRevivePet">Revive?</button>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        // Retrieve username from localStorage
+        //const username = localStorage.getItem('username') || 'Guest';
+        //document.getElementById('username').textContent = username;
+
+        // GSAP Animations
+        gsap.from(".navbar", { y: -50, opacity: 0, duration: 1.5 });
+        gsap.from(".feature-card", { scale: 0.8, opacity: 0, duration: 1, stagger: 0.3 });
+    </script>
+
+    <script src="pet.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

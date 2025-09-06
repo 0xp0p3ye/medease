@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedEase - AI Chatbot</title>
+    <link rel="stylesheet" href="styles1.css">
+    <!-- LangFlow Chatbot Script -->
+    <script src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.6/dist/build/static/js/bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Welcome to MedEase</h1>
+        <p>Your mental health and well-being platform</p>
+    </header>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index1.html">Home</a></li>
+            <li><a href="self-assessment.html">Self Assessment</a></li>
+            <li><a href="relaxation-tools.html">Relaxation Tools</a></li>
+            <li><a href="meditation.html">Meditation Zone</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="chatbot.html">AI Chatbot</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main class="main-container">
+        <section class="intro">
+            <h2>Welcome to the AI Chatbot</h2>
+            <p>Here you can talk to the AI to get guidance, tips, or just have a conversation about mental health.</p>
+        </section>
+
+        <!-- LangFlow Chatbot Integration -->
+        <section class="chatbot">
+            <langflow-chat
+                window_title="MedEase Chatbot"
+                flow_id="ec9d54c7-b9ba-42b6-86e3-a10d55c7c4bf"
+                host_url="http://localhost:7860">
+            </langflow-chat>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>© 2025 MedEase - All Rights Reserved</p>
+        <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

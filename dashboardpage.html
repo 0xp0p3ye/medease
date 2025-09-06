@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medease - Mental Wellness Hub</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f8f0ff;
+            color: #301934;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #6a5acd;
+        }
+        .dashboard {
+            display: block; /* Dashboard is visible by default after login */
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #f5f0fa;
+        }
+        .quote {
+            font-style: italic;
+            color: #8e44ad;
+            margin-top: 10px;
+        }
+        .dynamic-content {
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #f5f0fa;
+            margin-top: 20px;
+        }
+        .dynamic-content p {
+            margin-bottom: 10px;
+        }
+        .assessment-questions, .assessment-results { /* Styles for assessment sections */
+            margin-top: 10px;
+        }
+        .assessment-questions label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .assessment-questions select, .assessment-questions input[type="radio"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Medease - Mental Wellness Hub</h1>
+
+    <div class="dashboard">
+        <h2>Welcome, <span id="user-name">User</span>!</h2>
+        <div class="quote">"The mind is everything. What you think you become." - Buddha</div>
+
+        <div class="section">
+            <h3>Self-Assessment</h3>
+            <p>Take a quick self-assessment to understand your mental well-being.</p>
+            <button onclick="startAssessment()">Start Assessment</button>
+
+            <div class="assessment-questions" style="display:none;">
+                <form id="assessment-form">
+                    <label for="q1">Q1: How often have you been feeling down, depressed, or hopeless in the last two weeks?</label>
+                    <select id="q1" name="q1">
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+
+                    <label for="q2">Q2: How often have you had trouble falling or staying asleep, or sleeping too much in the last two weeks?</label>
+                    <select id="q2" name="q2">
+                        <option value="0">Not at all</option>
+                        <option value="1">Several days</option>
+                        <option value="2">More than half the days</option>
+                        <option value="3">Nearly every day</option>
+                    </select>
+                    <button type="button" onclick="calculateResults()">Submit Assessment</button>
+                </form>
+            </div>
+            <div class="assessment-results" style="display:none;">
+                <h3>Assessment Results</h3>
+                <p id="results-text"></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Relaxation Tools</h3>
+            <p>Find relaxation through simple games and breathing exercises.</p>
+            <button onclick="redirectToRelaxation()">Explore Relaxation Tools</button>
+        </div>
+
+        <div class="section">
+            <h3>Meditation Zone</h3>
+            <p>Access guided meditation sessions for mindfulness and relaxation.</p>
+            <button onclick="redirectToMeditation()">Start Meditating</button>
+        </div>
+
+        <div class="section">
+            <h3>Mental Health Tips</h3>
+            <p>Daily motivational quotes and actionable tips for improving mental well-being.</p>
+            <button onclick="redirectToTips()">View Tips</button>
+        </div>
+
+        <div class="section">
+            <h3>Therapist Profiles</h3>
+            <p>Browse profiles of therapists and their specializations.</p>
+            <button onclick="redirectToTherapists()">View Profiles</button>
+        </div>
+
+        <div class="section">
+            <h3>Notifications</h3>
+            <p>Important updates, reminders, and schedules.</p>
+            <button onclick="redirectToNotifications()">View Notifications</button>
+        </div>
+
+        <div class="dynamic-content" id="dynamic-content"> </div>
+
+    </div>
+</div>
+
+<script>
+    // ... (redirectTo... functions remain the same)
+
+    const dynamicContent = document.getElementById('dynamic-content');
+    const assessmentQuestions = document.querySelector('.assessment-questions');
+    const assessmentResults = document.querySelector('.assessment-results');
+
+    const tips = [ /* ... (same tips array) ... */ ];
+    const quotes = [ /* ... (same quotes array) ... */ ];
+
+    function displayDynamicContent() { /* ... (same function) ... */ }
+
+    displayDynamicContent();
+    setInterval(displayDynamicContent, 5000);
+
+
+    function startAssessment() {
+        assessmentQuestions.style.display = 'block';
+        assessmentResults.style.display = 'none';
+    }
+
+    function calculateResults() {
+        const q1 = parseInt(document.getElementById('q1').value);
+        const q2 = parseInt(document.getElementById('q2').value);
+        const totalScore = q1 + q2;
+
+        let resultsText = "";
+        if (totalScore < 3) {
+            resultsText = "Your responses suggest a relatively good mental well-being.";
+        } else if (totalScore < 6) {
+            resultsText = "You may be experiencing some mild symptoms. Consider exploring the resources on this site.";
+        } else {
+            resultsText = "Your responses indicate you may be experiencing significant symptoms. It's important to consult with a mental health professional.";
+        }
+
+        document.getElementById('results-text').textContent = resultsText;
+        assessmentResults.style.display = 'block';
+    }
+
+</script>
+
+</body>
+</html>
